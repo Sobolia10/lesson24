@@ -1,0 +1,55 @@
+//l1
+
+class Worker {
+    static name = 'Olya';
+    static surname = 'Soboleva';
+    static rate = 99;
+    static days = 365;
+
+    static setName(newName) {
+        name = newName;
+    }
+
+    static getSalary() {
+        return this.rate * this.days;
+    }
+}
+
+
+console.log(`${Worker.surname} ${Worker.surname}`);
+console.log(Worker.getSalary());
+
+
+//l2
+
+class MyString {
+    constructor(string) {
+        this._someString = string;
+    }
+
+    reverse(param) {
+        if (param == '')
+            return [...this._someString].reverse().join("");
+    }
+
+    ucFirst(param) {
+        return this._someString.charAt(0).toUpperCase() + this._someString.slice(1);
+    }
+
+    ucWords(param) {
+        let result = '';
+        let ar = this._someString.split(' ');
+        for (let i = 0; i < ar.length; i++) {
+            result += ar[i][0].toUpperCase() + ar[i].substring(1) + ' '
+        }
+
+        return result;
+    }
+}
+
+
+let myString = new MyString('soboleva olga');
+console.log(myString.reverse());
+console.log('UsFirst:' + myString.ucFirst());
+console.log('ucWords:' + myString.ucWords());
+
